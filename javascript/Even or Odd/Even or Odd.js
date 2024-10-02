@@ -1,18 +1,15 @@
 function CheckOddOrEven(number) {
-  if (number % 2 == 0) {
-    return "Even";
-  } else {
-    return "Odd";
-  }
+  return number % 2 === 0 ? "Even" : "Odd"; // Simplified return statement
 }
 
-alert("enter a number to check if it is even or odd");
-let number = prompt("Enter a number");
+alert("Enter a number to check if it is even or odd");
+let number;
 
-while (isNaN(number) || number == null || number == "") {
-  alert("Please enter a valid number");
+do {
   number = prompt("Enter a number");
-}
+  if (isNaN(number) || number === null || number.trim() === "") {
+    alert("Please enter a valid number");
+  }
+} while (isNaN(number) || number === null || number.trim() === "");
 
-let result = CheckOddOrEven(number);
-alert("The number is " + result);
+alert("The number is " + CheckOddOrEven(number));
